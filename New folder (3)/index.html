@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastline Logistics & Leisure | Complete Tourism & Logistics Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ================================
+           CSS VARIABLES & RESET
+           ================================ */
+        :root {
+            /* Light Mode - Coastal Theme */
+            --primary: #0066cc;
+            --primary-light: #4d94ff;
+            --primary-dark: #004d99;
+            --secondary: #00b4d8;
+            --accent: #90e0ef;
+            --sunset: #ff6b6b;
+            --sunset-orange: #f9844a;
+            --ocean: #0077be;
+            --sand: #f4e4bc;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --gradient-hero: linear-gradient(135deg, #0066cc 0%, #00b4d8 50%, #90e0ef 100%);
+            --gradient-sunset: linear-gradient(135deg, #ff6b6b 0%, #f9844a 50%, #f9c74f 100%);
+            --gradient-ocean: linear-gradient(135deg, #0077be 0%, #00b4d8 100%);
+            --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode - Deep Ocean */
+            --primary: #4d94ff;
+            --primary-light: #7ab8ff;
+            --primary-dark: #0066cc;
+            --secondary: #00b4d8;
+            --accent: #90e0ef;
+            --sunset: #ff8e8e;
+            --sunset-orange: #ffb347;
+            --ocean: #4da6ff;
+            --sand: #d4c5a3;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4);
+            --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0066cc 100%);
+            --gradient-sunset: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #c2410c 100%);
+            --gradient-ocean: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
+            --gradient-card: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ================================
+           UTILITY CLASSES
+           ================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================================
+           NAVIGATION
+           ================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        [data-theme="dark"] .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.75rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            transition: var(--transition);
+            border: 2px solid var(--border);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* ================================
+           HERO SECTION
+           ================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-hero);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        .btn-sunset {
+            background: var(--gradient-sunset);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-sunset:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: var(--bg-primary);
+            clip-path: polygon(0 50%, 100% 100%, 100% 100%, 0% 100%);
+        }
+
+        /* ================================
+           SERVICES SECTION - TOURISM & LOGISTICS
+           ================================ */
+        .services {
+            background: var(--bg-secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--gradient-card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-hero);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured::before {
+            background: var(--gradient-sunset);
+            transform: scaleX(1);
+        }
+
+        .service-card.featured:hover {
+            border-color: var(--sunset-orange);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-icon.ocean {
+            background: var(--gradient-ocean);
+        }
+
+        .service-icon.sunset {
+            background: var(--gradient-sunset);
+        }
+
+        .service-icon.vehicle {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+
+        .service-icon.adventure {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .service-feature {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .service-price {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-tag span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .book-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .book-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .category-tab.active {
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ================================
+           TOURS SECTION
+           ================================ */
+        .tours-section {
+            background: var(--bg-primary);
+        }
+
+        .tours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .tour-card {
+            background: var(--bg-primary);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .tour-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .tour-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .tour-card:hover .tour-image img {
+            transform: scale(1.1);
+        }
+
+        .tour-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--gradient-sunset);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .tour-badge.ocean {
+            background: var(--gradient-ocean);
+        }
+
+        .tour-badge.adventure {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .tour-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .tour-card:hover .tour-overlay {
+            opacity: 1;
+        }
+
+        .tour-quick-info {
+            display: flex;
+            gap: 1rem;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .tour-quick-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .tour-content {
+            padding: 2rem;
+        }
+
+        .tour-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .tour-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tour-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .tour-duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .tour-price {
+            text-align: right;
+        }
+
+        .tour-price .amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .tour-price .per {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* ================================
+           VEHICLE RENTAL SECTION
+           ================================ */
+        .vehicles-section {
+            background: var(--bg-secondary);
+        }
+
+        .vehicles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .vehicle-card {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .vehicle-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 1.5rem;
+            color: white;
+            position: relative;
+        }
+
+        .vehicle-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .vehicle-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .vehicle-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .vehicle-header p {
+            opacity: 0.9;
+            font-size: 0.875rem;
+        }
+
+        .vehicle-body {
+            padding: 1.5rem;
+        }
+
+        .vehicle-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .spec-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .vehicle-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .vehicle-price .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .vehicle-price .unit {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .rent-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .rent-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* ================================
+           EQUIPMENT RENTAL SECTION
+           ================================ */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .equipment-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .equipment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-sunset);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .equipment-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .equipment-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .equipment-card:hover .equipment-icon {
+            background: var(--primary);
+            color: white;
+            transform: rotateY(360deg);
+        }
+
+        .equipment-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .equipment-card p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sunset-orange);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-price span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ================================
+           BOOKING SECTION
+           ================================ */
+        .booking-section {
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .booking-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-section .section-header h2,
+        .booking-section .section-header p {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+
+        .booking-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        [data-theme="dark"] .booking-form {
+            background: rgba(30, 41, 59, 0.95);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--bg-primary);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .service-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--primary);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .submit-booking {
+            width: 100%;
+            background: var(--gradient-sunset);
+            color: white;
+            padding: 1.25rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-booking:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        /* ================================
+           ABOUT SECTION
+           ================================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--border);
+            z-index: 2;
+        }
+
+        .about-badge-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .about-badge-text {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* ================================
+           PORTFOLIO/TESTIMONIALS SECTION
+           ================================ */
+        .testimonials-section {
+            background: var(--bg-primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info .service-type {
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .testimonial-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-rating {
+            margin-top: 1rem;
+            color: #f9c74f;
+        }
+
+        /* ================================
+           CONTACT SECTION
+           ================================ */
+        .contact-section {
+            background: var(--bg-secondary);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info > p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-hero);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .contact-item div strong {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item div span {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            transition: var(--transition);
+            border: 2px solid var(--border);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--bg-primary);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ================================
+           FOOTER
+           ================================ */
+        .footer {
+            background: var(--bg-tertiary);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo i {
+            color: var(--primary);
+        }
+
+        .footer p {
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ================================
+           RESPONSIVE DESIGN
+           ================================ */
+        @media (max-width: 968px) {
+            .about-grid,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .service-checkboxes {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                transition: var(--transition);
+                box-shadow: var(--shadow-xl);
+                border-left: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .tours-grid,
+            .vehicles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-padding {
+                padding: 4rem 0;
+            }
+
+            .booking-form {
+                padding: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Animation for wave effect */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Pulse animation for featured items */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Gradient text animation */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gradient-text {
+            background: var(--gradient-sunset);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-water"></i>
+                Coastline Logistics
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#vehicles">Rentals</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Premium Tourism & Logistics Solutions</span>
+                </div>
+                <h1>Your Gateway to <span>Coastal</span> Adventures</h1>
+                <p class="hero-tagline">Experience unforgettable sunsets, whale watching tours, safari adventures, and premium vehicle rentals. We provide complete logistics and leisure solutions for your perfect coastal getaway.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        <i class="fas fa-compass"></i>
+                        Explore Services
+                    </a>
+                    <a href="#booking" class="btn btn-sunset">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Services</h2>
+                <p>Comprehensive tourism and logistics solutions tailored to make your coastal experience unforgettable</p>
+            </div>
+            
+            <div class="category-tabs fade-in">
+                <button class="category-tab active" data-category="all">All Services</button>
+                <button class="category-tab" data-category="tours">Tours & Activities</button>
+                <button class="category-tab" data-category="rentals">Rentals</button>
+                <button class="category-tab" data-category="logistics">Logistics</button>
+            </div>
+
+            <div class="services-grid" id="servicesGrid">
+                <!-- Sunset Watching -->
+                <div class="service-card featured fade-in" data-category="tours">
+                    <div class="service-icon sunset">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Sunset Watching Tours</h3>
+                    <p>Experience breathtaking coastal sunsets from the best vantage points. Perfect for couples, photographers, and nature lovers seeking magical evening moments.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Guided Tours</span>
+                        <span class="service-feature">Photo Stops</span>
+                        <span class="service-feature">Refreshments</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">$45 <span>/ person</span></span>
+                        <button class="book-btn" onclick="selectService('sunset')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Whale Watching -->
+                <div class="service-card featured fade-in" data-category="tours">
+                    <div class="service-icon ocean">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Whale Watching</h3>
+                    <p>Witness majestic whales in their natural habitat. Our expert guides ensure safe, respectful encounters with these magnificent marine mammals.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Expert Guides</span>
+                        <span class="service-feature">4-Hour Trip</span>
+                        <span class="service-feature">99% Sighting</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">$85 <span>/ person</span></span>
+                        <button class="book-btn" onclick="selectService('whale')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Boat Rides -->
+                <div class="service-card fade-in" data-category="tours">
+                    <div class="service-icon ocean">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Boat Rides & Cruises</h3>
+                    <p>Scenic coastal boat rides ranging from relaxing harbor cruises to adventurous open-water expeditions. Suitable for all ages and occasions.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Multiple Routes</span>
+                        <span class="service-feature">Private Charters</span>
+                        <span class="service-feature">Sunset Cruises</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $35</span>
+                        <button class="book-btn" onclick="selectService('boat')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Safari Trips -->
+                <div class="service-card featured fade-in" data-category="tours">
+                    <div class="service-icon adventure">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Safari Adventures</h3>
+                    <p>Explore coastal wildlife reserves and national parks. Spot elephants, leopards, birds, and exotic flora with our experienced safari guides.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Full Day</span>
+                        <span class="service-feature">Jeep Safari</span>
+                        <span class="service-feature">Park Fees Included</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">$120 <span>/ person</span></span>
+                        <button class="book-btn" onclick="selectService('safari')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Fishing Tours -->
+                <div class="service-card fade-in" data-category="tours">
+                    <div class="service-icon ocean">
+                        <i class="fas fa-fish-fins"></i>
+                    </div>
+                    <h3>Fishing Tours</h3>
+                    <p>Deep-sea and coastal fishing expeditions for beginners and experienced anglers. All equipment provided, keep your catch!</p>
+                    <div class="service-features">
+                        <span class="service-feature">Equipment Provided</span>
+                        <span class="service-feature">Expert Crew</span>
+                        <span class="service-feature">Full Day</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">$150 <span>/ person</span></span>
+                        <button class="book-btn" onclick="selectService('fishing')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Hire -->
+                <div class="service-card fade-in" data-category="rentals">
+                    <div class="service-icon vehicle">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Vehicle Hire</h3>
+                    <p>Wide range of cars, vans, and SUVs for your transportation needs. Self-drive or with professional drivers available.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Self Drive</span>
+                        <span class="service-feature">With Driver</span>
+                        <span class="service-feature">Airport Pickup</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $40<span>/day</span></span>
+                        <button class="book-btn" onclick="selectService('vehicle-hire')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Rent -->
+                <div class="service-card fade-in" data-category="rentals">
+                    <div class="service-icon vehicle">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Vehicle Rental</h3>
+                    <p>Flexible short and long-term vehicle rentals. Economy to luxury options with comprehensive insurance coverage.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Insurance Included</span>
+                        <span class="service-feature">24/7 Support</span>
+                        <span class="service-feature">Flexible Terms</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $35<span>/day</span></span>
+                        <button class="book-btn" onclick="selectService('vehicle-rent')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Lorry for Rent -->
+                <div class="service-card fade-in" data-category="logistics">
+                    <div class="service-icon vehicle">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Lorry & Truck Rental</h3>
+                    <p>Commercial lorry and truck rentals for logistics, moving, and cargo transport. Various capacities available with experienced drivers.</p>
+                    <div class="service-features">
+                        <span class="service-feature">2-10 Ton Capacity</span>
+                        <span class="service-feature">With Driver</span>
+                        <span class="service-feature">Island-wide</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $80<span>/day</span></span>
+                        <button class="book-btn" onclick="selectService('lorry')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Generators for Rent -->
+                <div class="service-card fade-in" data-category="logistics">
+                    <div class="service-icon vehicle">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Generator Rental</h3>
+                    <p>Reliable power solutions for events, construction sites, and emergencies. 5KVA to 100KVA generators with delivery and setup.</p>
+                    <div class="service-features">
+                        <span class="service-feature">5KVA - 100KVA</span>
+                        <span class="service-feature">Delivery Included</span>
+                        <span class="service-feature">24/7 Support</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $50<span>/day</span></span>
+                        <button class="book-btn" onclick="selectService('generator')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Rooms for Rent -->
+                <div class="service-card fade-in" data-category="rentals">
+                    <div class="service-icon sunset">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Rooms & Accommodation</h3>
+                    <p>Comfortable coastal rooms and apartments for short or long-term stays. Beachfront locations with modern amenities.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Beachfront</span>
+                        <span class="service-feature">A/C & WiFi</span>
+                        <span class="service-feature">Kitchenette</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $60<span>/night</span></span>
+                        <button class="book-btn" onclick="selectService('rooms')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Vehicle for Family Trip -->
+                <div class="service-card fade-in" data-category="rentals">
+                    <div class="service-icon vehicle">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Family Trip Vehicles</h3>
+                    <p>Spacious vans and SUVs perfect for family adventures. Child seats, entertainment systems, and ample luggage space available.</p>
+                    <div class="service-features">
+                        <span class="service-feature">7-15 Seater</span>
+                        <span class="service-feature">Child Seats</span>
+                        <span class="service-feature">Entertainment</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $70<span>/day</span></span>
+                        <button class="book-btn" onclick="selectService('family-vehicle')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Vehicle for Safari -->
+                <div class="service-card featured fade-in" data-category="rentals">
+                    <div class="service-icon adventure">
+                        <i class="fas fa-truck-monster"></i>
+                    </div>
+                    <h3>Safari Jeeps</h3>
+                    <p>Specially modified 4x4 jeeps for wildlife safaris. Elevated seating, open viewing, experienced drivers who know the terrain.</p>
+                    <div class="service-features">
+                        <span class="service-feature">4x4 Modified</span>
+                        <span class="service-feature">Open Viewing</span>
+                        <span class="service-feature">Expert Driver</span>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-tag">From $90<span>/day</span></span>
+                        <button class="book-btn" onclick="selectService('safari-jeep')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours Section -->
+    <section class="tours-section section-padding" id="tours">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Featured Tour Packages</h2>
+                <p>Curated experiences designed to showcase the best of our coastal paradise</p>
+            </div>
+            
+            <div class="tours-grid">
+                <div class="tour-card fade-in">
+                    <div class="tour-image">
+                        <img src="https://images.unsplash.com/photo-1616036740227-714b2763b0c0?w=800&h=600&fit=crop" alt="Sunset Cruise">
+                        <span class="tour-badge">Popular</span>
+                        <div class="tour-overlay">
+                            <div class="tour-quick-info">
+                                <span><i class="fas fa-clock"></i> 3 Hours</span>
+                                <span><i class="fas fa-users"></i> Max 12</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Golden Sunset Cruise</h3>
+                        <p>Sail into the sunset aboard our luxury catamaran. Includes champagne, canapés, and live acoustic music as you watch the sun dip below the horizon.</p>
+                        <div class="tour-meta">
+                            <div class="tour-duration">
+                                <i class="fas fa-calendar"></i>
+                                <span>Daily Departures</span>
+                            </div>
+                            <div class="tour-price">
+                                <div class="amount">$75</div>
+                                <div class="per">per person</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-card fade-in">
+                    <div class="tour-image">
+                        <img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&h=600&fit=crop" alt="Whale Watching">
+                        <span class="tour-badge ocean">Wildlife</span>
+                        <div class="tour-overlay">
+                            <div class="tour-quick-info">
+                                <span><i class="fas fa-clock"></i> 5 Hours</span>
+                                <span><i class="fas fa-users"></i> Max 20</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Blue Whale Expedition</h3>
+                        <p>Get up close with the largest mammals on Earth. Our marine biologist guides ensure ethical viewing while sharing fascinating insights about these gentle giants.</p>
+                        <div class="tour-meta">
+                            <div class="tour-duration">
+                                <i class="fas fa-calendar"></i>
+                                <span>Seasonal (Nov-Apr)</span>
+                            </div>
+                            <div class="tour-price">
+                                <div class="amount">$95</div>
+                                <div class="per">per person</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-card fade-in">
+                    <div class="tour-image">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&h=600&fit=crop" alt="Safari">
+                        <span class="tour-badge adventure">Adventure</span>
+                        <div class="tour-overlay">
+                            <div class="tour-quick-info">
+                                <span><i class="fas fa-clock"></i> Full Day</span>
+                                <span><i class="fas fa-users"></i> Max 6</span>
+                                <span><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Wildlife Safari Adventure</h3>
+                        <p>Full-day jeep safari through national parks. Spot elephants, leopards, bears, and hundreds of bird species in their natural habitat.</p>
+                        <div class="tour-meta">
+                            <div class="tour-duration">
+                                <i class="fas fa-calendar"></i>
+                                <span>Daily</span>
+                            </div>
+                            <div class="tour-price">
+                                <div class="amount">$140</div>
+                                <div class="per">per person</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Rentals Section -->
+    <section class="vehicles-section section-padding" id="vehicles">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Vehicle Rentals</h2>
+                <p>Quality vehicles for every need - from city driving to safari adventures</p>
+            </div>
+
+            <div class="vehicles-grid">
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-header">
+                        <span class="vehicle-type">Economy</span>
+                        <div class="vehicle-icon"><i class="fas fa-car-side"></i></div>
+                        <h3>Sedan Cars</h3>
+                        <p>Toyota, Honda, Nissan models</p>
+                    </div>
+                    <div class="vehicle-body">
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><i class="fas fa-user"></i> 4-5 Seats</div>
+                            <div class="spec-item"><i class="fas fa-suitcase"></i> 2 Large Bags</div>
+                            <div class="spec-item"><i class="fas fa-gas-pump"></i> Fuel Efficient</div>
+                            <div class="spec-item"><i class="fas fa-snowflake"></i> A/C</div>
+                        </div>
+                        <div class="vehicle-price">
+                            <div>
+                                <span class="price">$40</span>
+                                <span class="unit">/ day</span>
+                            </div>
+                            <button class="rent-btn" onclick="selectService('sedan')">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-header">
+                        <span class="vehicle-type">Family</span>
+                        <div class="vehicle-icon"><i class="fas fa-van-shuttle"></i></div>
+                        <h3>Vans & SUVs</h3>
+                        <p>Toyota HiAce, Nissan Caravan</p>
+                    </div>
+                    <div class="vehicle-body">
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><i class="fas fa-user"></i> 7-15 Seats</div>
+                            <div class="spec-item"><i class="fas fa-suitcase"></i> 6 Large Bags</div>
+                            <div class="spec-item"><i class="fas fa-wifi"></i> WiFi</div>
+                            <div class="spec-item"><i class="fas fa-child"></i> Child Seats</div>
+                        </div>
+                        <div class="vehicle-price">
+                            <div>
+                                <span class="price">$70</span>
+                                <span class="unit">/ day</span>
+                            </div>
+                            <button class="rent-btn" onclick="selectService('van')">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-header">
+                        <span class="vehicle-type">Adventure</span>
+                        <div class="vehicle-icon"><i class="fas fa-truck-pickup"></i></div>
+                        <h3>Safari Jeeps</h3>
+                        <p>Modified 4x4 Land Cruisers</p>
+                    </div>
+                    <div class="vehicle-body">
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><i class="fas fa-user"></i> 6-8 Seats</div>
+                            <div class="spec-item"><i class="fas fa-binoculars"></i> Open View</div>
+                            <div class="spec-item"><i class="fas fa-mountain"></i> 4x4 Drive</div>
+                            <div class="spec-item"><i class="fas fa-user-tie"></i> Driver Inc.</div>
+                        </div>
+                        <div class="vehicle-price">
+                            <div>
+                                <span class="price">$90</span>
+                                <span class="unit">/ day</span>
+                            </div>
+                            <button class="rent-btn" onclick="selectService('jeep')">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-header">
+                        <span class="vehicle-type">Commercial</span>
+                        <div class="vehicle-icon"><i class="fas fa-truck-moving"></i></div>
+                        <h3>Lorries & Trucks</h3>
+                        <p>For cargo and logistics</p>
+                    </div>
+                    <div class="vehicle-body">
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><i class="fas fa-weight-hanging"></i> 2-10 Ton</div>
+                            <div class="spec-item"><i class="fas fa-route"></i> Island-wide</div>
+                            <div class="spec-item"><i class="fas fa-user-tie"></i> Driver Inc.</div>
+                            <div class="spec-item"><i class="fas fa-box"></i> Cargo Ready</div>
+                        </div>
+                        <div class="vehicle-price">
+                            <div>
+                                <span class="price">$80</span>
+                                <span class="unit">/ day</span>
+                            </div>
+                            <button class="rent-btn" onclick="selectService('lorry-rent')">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment Rentals -->
+            <div class="section-header fade-in" style="margin-top: 4rem;">
+                <h2 style="font-size: 2rem;">Equipment Rentals</h2>
+                <p>Power solutions and equipment for your needs</p>
+            </div>
+
+            <div class="equipment-grid">
+                <div class="equipment-card fade-in">
+                    <div class="equipment-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Generators</h3>
+                    <p>Reliable power solutions for events and construction</p>
+                    <div class="equipment-price">$50<span>/day</span></div>
+                    <button class="book-btn" onclick="selectService('generator-rent')">Rent Now</button>
+                </div>
+
+                <div class="equipment-card fade-in">
+                    <div class="equipment-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Rooms</h3>
+                    <p>Comfortable coastal accommodation</p>
+                    <div class="equipment-price">$60<span>/night</span></div>
+                    <button class="book-btn" onclick="selectService('room-rent
